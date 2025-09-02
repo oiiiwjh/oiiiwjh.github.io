@@ -1,0 +1,48 @@
+/* App特定样式 */
+.App {
+  text-align: center;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+/* 页面过渡效果 */
+.page-transition {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: pageEnter 0.8s ease-out forwards;
+}
+
+@keyframes pageEnter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 响应式容器 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* 加载动画 */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #6366f1;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

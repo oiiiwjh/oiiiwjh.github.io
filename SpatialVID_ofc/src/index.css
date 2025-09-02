@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa; /* 主背景色：浅灰色，营造学术风格的清爽氛围 */
+  color: #1f2937; /* 主文字色：深灰色，确保在浅色背景上的良好可读性 */
+  overflow-x: hidden;
+  /* 优化滚动性能 */
+  -webkit-overflow-scrolling: touch;
+  scroll-padding-top: 0;
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6; /* 滚动条轨道：浅灰色，与主背景色协调 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db; /* 滚动条滑块：中性灰色，提供适度对比 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af; /* 滚动条滑块悬停：深灰色，增强交互反馈 */
+}
+
+/* 平滑过渡 */
+.smooth-transition {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 苹果风格按钮 */
+.apple-button {
+  /* bg-indigo-600: 主按钮背景色，靛蓝色，现代学术风格 */
+  /* hover:bg-indigo-700: 按钮悬停时的深靛蓝色，增强交互体验 */
+  @apply px-6 py-3 bg-indigo-600 text-white rounded-full font-medium transition-all duration-300 hover:bg-indigo-700 hover:scale-105 active:scale-95;
+}
+
+/* 玻璃态效果 */
+.glass-effect {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8); /* 半透明白色背景，营造玻璃质感 */
+  border: 1px solid rgba(31, 41, 55, 0.1); /* 淡灰色边框，与深色文字呼应 */
+}
+
+/* 文字渐变效果 */
+.gradient-text {
+  /* 渐变色：从靛蓝色(#6366f1)到紫色(#8b5cf6)，用于标题和重点文字的视觉突出 */
+  /* 从靛蓝色渐变到紫色的背景渐变效果，用于创建现代感的文字装饰 */
+  background: linear-gradient(135deg, #5e96db 0%, #00c0c6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 字符级高光特效 */
+.char-highlight {
+  /* 与gradient-text相同的渐变色，用于可交互的字符高光效果 */
+  background: linear-gradient(135deg, #5e96db 0%, #00c0c6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.char-highlight.text-white {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: #1f2937; /* 深灰色文字，用于浅色背景上的字符高光 */
+  background-clip: unset;
+  color: #1f2937; /* 与主文字色保持一致 */
+}
+
+.char-highlight .char {
+  display: inline-block;
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: default;
+  background: inherit;
+  -webkit-background-clip: inherit;
+  -webkit-text-fill-color: inherit;
+  background-clip: inherit;
+  color: inherit;
+}
+
+.char-highlight .char:hover {
+  color: #5d86f9; /* 悬停时的靛蓝色，与主题色保持一致 */
+  -webkit-text-fill-color: #5d86f9;
+  text-shadow: 
+    /* 靛蓝色发光效果，从内到外逐渐减弱，营造科技感 */
+    0 0 10px rgba(93,134,249,0.8),
+    0 0 20px rgba(93,134,249,0.6),
+    0 0 30px rgba(93,134,249,0.4),
+    0 0 40px rgba(93,134,249,0.3); /* 外层靛蓝色光晕，呼应渐变主题色 */
+  transform: scale(1.1);
+  z-index: 10;
+  position: relative;
+}
+
+.char-highlight.text-white .char:hover {
+  color: #5d86f9; /* 浅色背景上的字符悬停色，统一使用靛蓝色 */
+  -webkit-text-fill-color: #5d86f9;
+  text-shadow: 
+    /* 与普通字符悬停效果相同的靛蓝色发光 */
+    0 0 10px rgba(93, 134, 249, 0.8),
+    0 0 20px rgba(93, 134, 249, 0.6),
+    0 0 30px rgba(93, 134, 249, 0.4),
+    0 0 40px rgba(93, 134, 249, 0.3); /* 靛蓝色外层光晕，保持一致性 */
+  transform: scale(1.1);
+  z-index: 10;
+  position: relative;
+}
+
+/* 隐藏元素用于动画 */
+.reveal {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 3D卡片效果 */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: rotateY(5deg) rotateX(5deg);
+}
+
+/* 视频控制滑块样式 */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6366f1; /* 滑块按钮：靛蓝色，与新主题色保持一致 */
+  cursor: pointer;
+  border: 2px solid #fff; /* 白色边框，提供清晰对比 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-webkit-slider-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: rgba(31, 41, 55, 0.2); /* 滑块轨道：淡灰色，与新主题保持一致 */
+  border-radius: 2px;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #6366f1; /* Firefox滑块按钮：与Webkit保持一致的靛蓝色 */
+  cursor: pointer;
+  border: 2px solid #fff; /* 白色边框，与Webkit样式保持一致 */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.slider::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: rgba(31, 41, 55, 0.2); /* Firefox滑块轨道：与Webkit保持一致的淡灰色 */
+  border-radius: 2px;
+}
