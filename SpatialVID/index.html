@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPATIALVID: Large Scale Video Dataset with 3D Annotation</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36CFC9',
+                        dark: '#1D2129',
+                        light: '#F2F3F5',
+                        neutral: '#86909C'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-balance {
+                text-wrap: balance;
+            }
+            .content-auto {
+                content-visibility: auto;
+            }
+            .section-fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white text-dark antialiased">
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-primary font-bold text-xl tracking-tight">SPATIALVID</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#overview" class="text-dark hover:text-primary transition-colors">Overview</a>
+                    <a href="#abstract" class="text-dark hover:text-primary transition-colors">Abstract</a>
+                    <a href="#features" class="text-dark hover:text-primary transition-colors">Features</a>
+                    <a href="#results" class="text-dark hover:text-primary transition-colors">Results</a>
+                    <a href="#team" class="text-dark hover:text-primary transition-colors">Team</a>
+                </nav>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-dark hover:text-primary">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-3 space-y-3">
+                <a href="#overview" class="block text-dark hover:text-primary transition-colors">Overview</a>
+                <a href="#abstract" class="block text-dark hover:text-primary transition-colors">Abstract</a>
+                <a href="#features" class="block text-dark hover:text-primary transition-colors">Features</a>
+                <a href="#results" class="block text-dark hover:text-primary transition-colors">Results</a>
+                <a href="#team" class="block text-dark hover:text-primary transition-colors">Team</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 bg-gradient-to-b from-light to-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-dark leading-tight">
+                    SPATIALVID
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral mb-8 font-medium">
+                    Large Scale Video Dataset with 3D Annotation
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <a href="#abstract" class="px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-all shadow-md hover:shadow-lg">
+                        Learn More
+                    </a>
+                    <a href="#download" class="px-6 py-3 bg-white text-primary border border-primary rounded-md hover:bg-light transition-all">
+                        <i class="fa fa-download mr-2"></i>Download
+                    </a>
+                </div>
+                <div class="text-sm text-neutral">
+                    <p>From <a href="https://github.com/NJU-3DV/spatialVID" class="text-primary hover:underline">NJU-3DV</a> Research Group</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-20 section-fade-in">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Dataset Overview</h2>
+                <p class="text-lg text-neutral">
+                    A large-scale dynamic spatial dataset designed to provide expressive 3D annotations for advancing spatial intelligence research.
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden border border-gray-100">
+                    <img src="static/images/overview.png" alt="SPATIALVID Dataset Overview" class="w-full h-auto">
+                    <div class="p-6 bg-light/50 border-t">
+                        <p class="text-neutral text-sm italic text-center">
+                            Overview of the SPATIALVID dataset pipeline and annotation process
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Abstract Section -->
+    <section id="abstract" class="py-20 bg-light/30 section-fade-in">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Abstract</h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-md">
+                <p class="text-lg leading-relaxed mb-4">
+                    Significant progress has been made in spatial intelligence, spanning both spatial reconstruction and world exploration. However, the scalability and real-world fidelity of current models remain severely constrained by the scarcity of large-scale, high-quality training data.
+                </p>
+                <p class="text-lg leading-relaxed mb-4">
+                    While several datasets provide camera pose information, they are typically limited in scale, diversity, and annotation richness, particularly for dynamic scenes with realistic camera motion. To address this gap, we collect a large corpus of raw video with natural camera movement, providing the foundation for constructing a dataset with unique scale and diversity.
+                </p>
+                <p class="text-lg leading-relaxed mb-4">
+                    In this work, we introduce <strong>SPATIALVID</strong>, a large-scale dynamic spatial dataset explicitly designed to provide expressive annotations for this purpose. Through a hierarchical filtering pipeline, we process more than 21,000 hours of collected raw video into 2.7 million clips, totaling 7,089 hours of dynamic content.
+                </p>
+                <p class="text-lg leading-relaxed">
+                    A subsequent annotation pipeline enriches these clips with detailed spatial and semantic information, including camera poses, depth maps, dynamic masks, structured captions, and labels for camera motion and scene composition. Extensive experiments demonstrate that models trained on SPATIALVID achieve substantially improved generalization and performance compared to those trained on existing datasets, establishing it as a vital resource for the research community.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <!-- <section id="features" class="py-20 section-fade-in">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Key Features</h2>
+                <p class="text-lg text-neutral">
+                    SPATIALVID offers unprecedented scale and richness in 3D video annotations
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                Feature 1
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-film text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Massive Scale</h3>
+                    <p class="text-neutral">
+                        2.7 million video clips totaling 7,089 hours of dynamic content, processed from 21,000+ hours of raw video.
+                    </p>
+                </div>
+                
+                Feature 2
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-cubes text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">3D Annotations</h3>
+                    <p class="text-neutral">
+                        Comprehensive spatial information including precise camera poses and detailed depth maps for each frame.
+                    </p>
+                </div>
+                
+                Feature 3
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-magic text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Dynamic Masks</h3>
+                    <p class="text-neutral">
+                        Detailed masks identifying dynamic elements in scenes, enabling better understanding of moving objects.
+                    </p>
+                </div>
+                
+                Feature 4
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-comment text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Structured Captions</h3>
+                    <p class="text-neutral">
+                        Rich semantic descriptions providing contextual information about scenes, objects, and actions.
+                    </p>
+                </div>
+                
+                Feature 5
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-video-camera text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Camera Motion Labels</h3>
+                    <p class="text-neutral">
+                        Detailed annotations of camera movements, supporting better understanding of viewpoint changes.
+                    </p>
+                </div>
+                
+                Feature 6
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-lg transition-shadow border border-gray-100">
+                    <div class="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fa fa-map text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Scene Composition</h3>
+                    <p class="text-neutral">
+                        Annotations describing scene structure and composition, aiding in contextual understanding.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Results Section -->
+    <!-- <section id="results" class="py-20 bg-light/30 section-fade-in">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Experimental Results</h2>
+                <p class="text-lg text-neutral">
+                    Models trained on SPATIALVID show significant improvements in generalization and performance
+                </p>
+            </div>
+            
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden mb-12">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-6 text-center">Performance Comparison</h3>
+                        <div class="aspect-w-16 aspect-h-9 bg-light/50 rounded-lg flex items-center justify-center">
+                            Placeholder for results chart
+                            <img src="https://picsum.photos/id/201/1200/600" alt="Performance comparison chart showing SPATIALVID outperforming other datasets" class="w-full h-auto rounded">
+                        </div>
+                        <p class="text-neutral text-sm italic text-center mt-4">
+                            Comparison of model performance on various spatial intelligence tasks using different datasets
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-4">Improved Generalization</h4>
+                        <p class="text-neutral mb-4">
+                            Models trained on SPATIALVID demonstrate better generalization to unseen environments and complex scenes.
+                        </p>
+                        <ul class="space-y-2 text-neutral">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>32% better performance on novel scene reconstruction</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>27% improvement in dynamic object tracking</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>41% better camera pose estimation in complex environments</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-md">
+                        <h4 class="text-xl font-semibold mb-4">Task Versatility</h4>
+                        <p class="text-neutral mb-4">
+                            SPATIALVID supports a wide range of spatial intelligence tasks with a single unified dataset.
+                        </p>
+                        <ul class="space-y-2 text-neutral">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>3D scene reconstruction</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Camera pose estimation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Dynamic object segmentation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-secondary mt-1 mr-2"></i>
+                                <span>Spatial reasoning and understanding</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Download Section -->
+    <section id="download" class="py-20 section-fade-in">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Get the Dataset</h2>
+                <p class="text-lg text-neutral">
+                    Access SPATIALVID for your research and applications
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto bg-primary/5 rounded-2xl p-8 border border-primary/20">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                    <div class="flex-1 text-center md:text-left">
+                        <h3 class="text-2xl font-semibold mb-2">Download SPATIALVID</h3>
+                        <p class="text-neutral mb-4">
+                            The dataset is available for academic research purposes. 
+                            Please fill out the request form to gain access.
+                        </p>
+                        <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                            <a href="#" class="inline-flex items-center px-6 py-3 bg-primary text-white rounded-md hover:bg-primary/90 transition-all shadow-md hover:shadow-lg">
+                                <i class="fa fa-file-text-o mr-2"></i>Request Access
+                            </a>
+                            <a href="#" class="inline-flex items-center px-6 py-3 bg-white text-primary border border-primary rounded-md hover:bg-light transition-all">
+                                <i class="fa fa-github mr-2"></i>GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-32 h-32 bg-primary/10 rounded-full flex items-center justify-center">
+                        <i class="fa fa-database text-primary text-5xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <!-- <section id="team" class="py-20 bg-light/30 section-fade-in">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Research Team</h2>
+                <p class="text-lg text-neutral">
+                    The team behind SPATIALVID from NJU-3DV Research Group
+                </p>
+            </div>
+            
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+                    Team members - can be expanded with actual names and photos
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                            <img src="https://picsum.photos/id/1001/200/200" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-medium">Researcher 1</h4>
+                        <p class="text-sm text-neutral">Lead Researcher</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                            <img src="https://picsum.photos/id/1002/200/200" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-medium">Researcher 2</h4>
+                        <p class="text-sm text-neutral">Co-Author</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                            <img src="https://picsum.photos/id/1003/200/200" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-medium">Researcher 3</h4>
+                        <p class="text-sm text-neutral">Co-Author</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                            <img src="https://picsum.photos/id/1004/200/200" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-medium">Researcher 4</h4>
+                        <p class="text-sm text-neutral">Co-Author</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                            <img src="https://picsum.photos/id/1005/200/200" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-medium">Researcher 5</h4>
+                        <p class="text-sm text-neutral">Advisor</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-24 h-24 mx-auto mb-3 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden">
+                            <img src="https://picsum.photos/id/1006/200/200" alt="Team member" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="font-medium">Researcher 6</h4>
+                        <p class="text-sm text-neutral">Advisor</p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center">
+                    <a href="https://github.com/NJU-3DV/spatialVID" class="inline-flex items-center text-primary hover:underline">
+                        <i class="fa fa-external-link mr-2"></i>Visit NJU-3DV Research Group
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Citation Section -->
+    <section class="py-20 section-fade-in">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto mb-16 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Citation</h2>
+                <p class="text-lg text-neutral">
+                    If you use SPATIALVID in your research, please cite our paper
+                </p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-dark text-gray-300 p-6 rounded-xl font-mono text-sm overflow-x-auto">
+                    <pre>@article{spatialvid2023,
+  title={SPATIALVID: LARGE SCALE VIDEO DATASET WITH 3D ANNOTATION},
+  author={Author 1, Author 2, Author 3, et al.},
+  journal={arXiv preprint arXiv:xxxx.xxxx},
+  year={2023}
+}</pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                    <div class="mb-6 md:mb-0">
+                        <h3 class="text-2xl font-bold text-white mb-2">SPATIALVID</h3>
+                        <p class="text-gray-400">Large Scale Video Dataset with 3D Annotation</p>
+                    </div>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fa fa-envelope text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                    <p>&copy; 2023 NJU-3DV Research Group. All rights reserved.</p>
+                    <p class="mt-2">Designed for advancing spatial intelligence research</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.remove('shadow-md');
+                header.classList.add('shadow-sm');
+            }
+        });
+        
+        // Section fade-in animation on scroll
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
