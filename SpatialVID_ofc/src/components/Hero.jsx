@@ -111,20 +111,20 @@ const Hero = () => {
       <div className="relative z-20 text-center px-6 py-16 w-full max-w-none mx-auto lg:max-w-7xl xl:max-w-none 2xl:max-w-none">
         <motion.h1
           ref={titleRef}
-          className="flex items-center justify-center gap-4 text-5xl sm:text-5xl md:text-7xl lg:text-9xl xl:text-11xl font-bold mb-10 leading-tight"
+          className="flex items-center justify-center gap-4 text-5xl sm:text-5xl md:text-7xl lg:text-9xl xl:text-11xl 2xl:text-14xl font-bold mb-10 leading-tight"
           initial={{ opacity: 0 }}
         >
           <img 
             src={spatialLogo} 
             alt="SpatialVID Logo" 
-            className="w-20 h-20 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32"
+            className="w-20 h-20 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 2xl:w-36 2xl:h-36"
           />
           <CharHighlight text="SpatialVID" />
         </motion.h1>
         
         <motion.p
           ref={subtitleRef}
-          className="text-2xl md:text-3xl text-black mb-12 max-w-5xl mx-auto leading-relaxed"
+          className="text-2xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-6xl text-black mb-12 max-w-[60vw] mx-auto leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
@@ -135,7 +135,7 @@ const Hero = () => {
         
         <motion.div
           ref={heroRef}
-          className="text-2xl text-black mb-16 max-w-5xl mx-auto"
+          className="text-2xl md:text-md lg:text-xl xl:text-2xl 2xl:text-3xl text-black mb-16 max-w-[75vw] mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
@@ -158,7 +158,7 @@ const Hero = () => {
               whileHover={{ scale: 1.05, boxShadow: '0 20px 40px rgba(0, 113, 227, 0.3)' }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToNext}
-              className="apple-button text-xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-550 hover:to-teal-550 text-gray-700"
+              className="apple-button text-xl md:text-md lg:text-lg xl:text-xl 2xl:text-3xl px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-500 hover:from-cyan-550 hover:to-teal-550 text-gray-700"
             >
               Explore Project
             </motion.button>
@@ -169,7 +169,7 @@ const Hero = () => {
                  rel="noopener noreferrer"
                  whileHover={{ scale: 1.05 }}
                  whileTap={{ scale: 0.95 }}
-                 className="inline-block text-xl px-6 py-3 text-gray-700 rounded-full font-medium transition-all duration-300 hover:shadow-lg"
+                 className="inline-block text-xl md:text-md lg:text-md xl:text-xl 2xl:text-3xl px-6 py-3 text-gray-700 rounded-full font-medium transition-all duration-300 hover:shadow-lg"
                  style={{
                    backgroundColor: '#d3e8fd',
                    borderColor: '#d3e8fd',
@@ -189,14 +189,14 @@ const Hero = () => {
           </div>
           
           {/* 外部链接按钮 */}
-           <div className="flex flex-wrap gap-3 justify-center items-center">
+           <div className="flex flex-wrap gap-4 justify-center items-center">
              <motion.a
                href="https://github.com/NJU-3DV/spatialVID"
                target="_blank"
                rel="noopener noreferrer"
                whileHover={{ scale: 1.05, y: -2 }}
                whileTap={{ scale: 0.95 }}
-               className="flex items-center gap-2 px-4 py-2 text-gray-700 rounded-lg font-medium transition-all duration-300 text-base hover:shadow-md"
+               className="flex items-center gap-2 px-4 py-2 text-sm md:text-sm lg:text-md xl:text-lg 2xl:text-2xl text-gray-700 rounded-lg font-medium transition-all duration-300 text-base hover:shadow-md"
                style={{
                  backgroundColor: '#d3e8fd',
                  borderColor: '#d3e8fd',
@@ -211,7 +211,7 @@ const Hero = () => {
                  e.currentTarget.style.borderColor = '#d3e8fd'
                }}
              >
-               <img src={githubLogo} alt="GitHub" className="w-5 h-5" />
+               <img src={githubLogo} alt="GitHub" className="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7" />
                GitHub
              </motion.a>
              
@@ -221,7 +221,7 @@ const Hero = () => {
                rel="noopener noreferrer"
                whileHover={{ scale: 1.05, y: -2 }}
                whileTap={{ scale: 0.95 }}
-               className="flex items-center gap-2 px-4 py-2 text-gray-700 rounded-lg font-medium transition-all duration-300 text-base hover:shadow-md"
+               className="flex items-center gap-2 px-4 py-2 text-sm md:text-sm lg:text-md xl:text-lg 2xl:text-2xl text-gray-700 rounded-lg font-medium transition-all duration-300 text-base hover:shadow-md"
                style={{
                  backgroundColor: '#d3e8fd',
                  borderColor: '#d3e8fd',
@@ -236,7 +236,7 @@ const Hero = () => {
                  e.currentTarget.style.borderColor = '#d3e8fd'
                }}
              >
-               <img src={huggingfaceLogo} alt="HuggingFace" className="w-5 h-5" />
+               <img src={huggingfaceLogo} alt="HuggingFace" className="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7" />
                HuggingFace
              </motion.a>
              
@@ -246,7 +246,7 @@ const Hero = () => {
                rel="noopener noreferrer"
                whileHover={{ scale: 1.05, y: -2 }}
                whileTap={{ scale: 0.95 }}
-               className="flex items-center gap-2 px-4 py-2 text-gray-700 rounded-lg font-medium transition-all duration-300 text-base hover:shadow-md"
+               className="flex items-center gap-2 px-4 py-2 text-sm md:text-sm lg:text-md xl:text-lg 2xl:text-2xl text-gray-700 rounded-lg font-medium transition-all duration-300 text-base hover:shadow-md"
                style={{
                  backgroundColor: '#d3e8fd',
                  borderColor: '#d3e8fd',
@@ -261,7 +261,7 @@ const Hero = () => {
                  e.currentTarget.style.borderColor = '#d3e8fd'
                }}
              >
-               <img src={arxivLogo} alt="arXiv" className="w-5 h-5" />
+               <img src={arxivLogo} alt="arXiv" className="w-5 h-5 md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-5 xl:h-5 2xl:w-7 2xl:h-7" />
                arXiv
              </motion.a>
            </div>
