@@ -108,7 +108,7 @@ const Hero = () => {
       <div className="absolute inset-0 z-10" style={{ backgroundColor: '#eef5ff' }} />
       
       {/* 主要内容 */}
-      <div className="relative z-20 text-center px-6 py-16 max-w-6xl mx-auto">
+      <div className="relative z-20 text-center px-6 py-16 w-full max-w-none mx-auto lg:max-w-7xl xl:max-w-none 2xl:max-w-none">
         <motion.h1
           ref={titleRef}
           className="flex items-center justify-center gap-4 text-5xl sm:text-5xl md:text-7xl lg:text-9xl xl:text-11xl font-bold mb-10 leading-tight"

@@ -33,7 +33,7 @@ const About = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.1 }}
-            className="relative mb-16 w-full max-w-4xl"
+            className="relative mb-16 w-[90%] max-w-4xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-none"
           >
             <div className="relative w-full aspect-video overflow-hidden rounded-3xl bg-gray-100">
               {/* 加载指示器 */}
@@ -70,7 +70,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.1 }}
-            className="max-w-4xl"
+            className="w-[90%] max-w-4xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-none"
           >
             {/* 统计数据 */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mt-1 mb-10">
@@ -100,11 +100,11 @@ const About = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: false, amount: 0.1 }}
-              className="mb-12 w-full max-w-5xl mx-auto"
+              className="mb-12 w-full max-w-5xl lg:max-w-6xl xl:max-w-7xl 2xl:max-w-none mx-auto"
             >
               <div className="relative w-full overflow-visible rounded-2xl bg-gradient-to-br from-gray-100 to-gray-200 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 hover:z-10">
                 <img 
-                  src="src/img/overview.png" 
+                  src="/img/overview.png" 
                   alt="Overview"
                   className="w-full h-auto hover:opacity-100 transition-all duration-500 hover:scale-[1.02]"
                 />

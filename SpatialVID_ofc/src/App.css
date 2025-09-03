@@ -21,9 +21,31 @@
 
 /* 响应式容器 */
 .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+}
+
+/* 大屏幕优化 */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 90%;
+    padding: 0 40px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 85%;
+    padding: 0 60px;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    max-width: 80%;
+    padding: 0 80px;
+  }
 }
 
 @media (max-width: 768px) {
