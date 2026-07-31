@@ -2,18 +2,7 @@
 
 这是一个由 Markdown 驱动的静态个人主页。个人介绍、新闻、论文、教育经历、
 研究实习和奖项统一维护在 [`build_page/selfOS.md`](build_page/selfOS.md)；
-[`index.html`](index.html) 由构建脚本生成，不应手工修改。
-
-当前主页包括：
-
-- 空间理解、世界模型和视频生成方向的个人介绍
-- LingBot-World 2.0 与 SpatialVID 论文
-- 南京大学硕博连读及西安交通大学教育经历
-- Ant Research、NIO 和 OpenDriveLab 研究实习
-- Email、GitHub 和 Google Scholar 图标链接
-- White、Black、Auto 三种显示模式
-- `terracotta`、`ink`、`sage`、`plum` 四套主题配色
-
+[`index.html`](index.html) 由构建脚本生成，不应手工修改。、
 ## 快速开始
 
 在本目录执行：
