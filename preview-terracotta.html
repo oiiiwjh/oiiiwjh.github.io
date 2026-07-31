@@ -1,0 +1,344 @@
+<!-- Generated from build_page/selfOS.md by build_page/build.py. Edit the Markdown source, not this file. -->
+<!DOCTYPE html>
+<html lang="en" data-theme="terracotta" data-color-preference="auto" data-color-mode="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jiahao Wang — research in spatial understanding, world models, and video generation.">
+    <meta name="author" content="Jiahao Wang">
+    <meta name="theme-color" content="#faf8f3">
+    <title>Jiahao Wang</title>
+
+    <script>
+      (function () {
+        var preference = "auto";
+        try {
+          var storedPreference = localStorage.getItem("homepage-color-mode");
+          if (["light", "dark", "auto"].includes(storedPreference)) {
+            preference = storedPreference;
+          }
+        } catch (error) {
+          // Local storage can be unavailable in privacy-restricted contexts.
+        }
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.colorPreference = preference;
+        document.documentElement.dataset.colorMode =
+          preference === "auto" ? (prefersDark ? "dark" : "light") : preference;
+      })();
+    </script>
+
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&amp;family=Lato:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script type="module" src="typography.js"></script>
+  </head>
+
+  <body>
+    <nav class="topnav" aria-label="Primary navigation">
+      <div class="topnav-inner">
+        <a class="brand" href="#top">Jiahao Wang</a>
+
+        <div class="nav-actions">
+          <ul class="nav-links" id="nav-links">
+          <li><a href="#news">News</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#awards">Awards</a></li>
+          </ul>
+
+          <div class="color-mode-switch" role="group" aria-label="Color mode">
+            <button class="color-mode-button" type="button" data-color-choice="light" aria-label="White mode" title="White">
+              <i class="fa-regular fa-sun" aria-hidden="true"></i>
+              <span class="sr-only">White</span>
+            </button>
+            <button class="color-mode-button" type="button" data-color-choice="dark" aria-label="Black mode" title="Black">
+              <i class="fa-regular fa-moon" aria-hidden="true"></i>
+              <span class="sr-only">Black</span>
+            </button>
+            <button class="color-mode-button" type="button" data-color-choice="auto" aria-label="Follow system color mode" title="Auto">
+              <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+              <span class="sr-only">Auto</span>
+            </button>
+          </div>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="progress-bar" id="progress" aria-hidden="true"></div>
+    </nav>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <main class="container" id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-text">
+          <p class="eyebrow">Spatial intelligence researcher</p>
+          <h1 class="name" id="page-title">Jiahao Wang</h1>
+          <p class="bio">I'm currently in a combined Master's and Ph.D. program (2-year master's + 4-year Ph.D.) at the <a href="https://is.nju.edu.cn/" target="_blank" rel="noopener noreferrer">School of Intelligent Science and Technology</a>, <strong>Nanjing University</strong>, advised by <a href="https://yoyo000.github.io/" target="_blank" rel="noopener noreferrer">Prof. Yao Yao</a>.</p>
+          <p class="bio">Before that, I received my B.S. in Artificial Intelligence from <strong>Xi'an Jiaotong University</strong>, together with an honors degree from the Qian Xuesen Honors College.</p>
+          <p class="bio">My research interests include <strong>spatial understanding</strong>, <strong>world models</strong>, and <strong>video generation</strong>.</p>
+          <div class="profile-links" role="group" aria-label="Profile links">
+            <a class="profile-link" href="mailto:jiah.wang@smail.nju.edu.cn" aria-label="Email: jiah.wang" title="Email">
+              <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+              <span class="sr-only">Email: jiah.wang</span>
+            </a>
+            <a class="profile-link" href="https://github.com/oiiiwjh" target="_blank" rel="noopener noreferrer" aria-label="GitHub: @oiiiwjh" title="GitHub">
+              <i class="fa-brands fa-github" aria-hidden="true"></i>
+              <span class="sr-only">GitHub: @oiiiwjh</span>
+            </a>
+            <a class="profile-link" href="https://scholar.google.com/scholar?q=author%3A%22Jiahao%20Wang%22%20SpatialVID" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar: Jiahao Wang" title="Google Scholar">
+              <i class="fa-brands fa-google-scholar" aria-hidden="true"></i>
+              <span class="sr-only">Google Scholar: Jiahao Wang</span>
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-photo">
+          <img src="assets/profile.jpg" alt="Cartoon profile image of Pluto">
+        </figure>
+      </section>
+      <section class="section reveal" id="news" aria-labelledby="news-title">
+        <div class="section-heading">
+          <p class="section-index">01</p>
+          <h2 id="news-title">News</h2>
+        </div>
+        <ul class="news-list">
+          <li>
+            <time datetime="2026-07">2026.07</time>
+            <p><a href="https://arxiv.org/abs/2607.07534" target="_blank" rel="noopener noreferrer">LingBot-World 2.0</a>, our interactive video world model with an unbounded interaction horizon, is released with code and models.</p>
+          </li>
+          <li>
+            <time datetime="2025-12">2025.12</time>
+            <p>Started a research internship at Ant Research, focusing on video world models.</p>
+          </li>
+          <li>
+            <time datetime="2025-09">2025.09</time>
+            <p><a href="https://arxiv.org/abs/2509.09676" target="_blank" rel="noopener noreferrer">SpatialVID</a>, our large-scale video dataset with spatial annotations, is available on arXiv.</p>
+          </li>
+          <li>
+            <time datetime="2024-09">2024.09</time>
+            <p>Started my combined Master's and Ph.D. program at Nanjing University, advised by Prof. Yao Yao.</p>
+          </li>
+          <li>
+            <time datetime="2024-08">2024.08</time>
+            <p>Completed my research internship with NIO's Model Infra Team.</p>
+          </li>
+        </ul>
+      </section>
+      <section class="section reveal" id="research" aria-labelledby="research-title">
+        <div class="section-heading">
+          <p class="section-index">02</p>
+          <h2 id="research-title">Selected Research</h2>
+        </div>
+        <article class="paper-card">
+          <a
+            class="paper-visual"
+            href="https://technology.robbyant.com/lingbot-world-v2"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Open the Infinite Worlds with Versatile Interactions project page"
+          >
+            <img
+              src="assets/lingbot-world-v2.png"
+              alt="LingBot-World-Infinity teaser featuring diverse interactive worlds"
+              loading="lazy"
+            >
+            <span class="visual-note">View project ↗</span>
+          </a>
+
+          <div class="paper-content">
+            <h3>
+              <a href="https://technology.robbyant.com/lingbot-world-v2" target="_blank" rel="noopener noreferrer">Infinite Worlds with Versatile Interactions</a>
+            </h3>
+            <p class="authors">Zelin Gao, Qiuyu Wang, Jiapeng Zhu, Jingye Chen, Zichen Liu, Qingyan Bai, <strong>Jiahao Wang</strong>, Yufeng Yuan, Hanlin Wang, Yichong Lu, Ka Leong Cheng, Haojie Zhang, Jian Gao, Tianrui Feng, Yuzheng Liu, Yao Yao, Yinghao Xu, Xing Zhu, Yujun Shen, Hao Ouyang</p>
+            <p class="paper-venue">Technical Report, 2026</p>
+            <p class="paper-summary">LingBot-World 2.0 (LingBot-World-Infinity) supports an unbounded interaction horizon, real-time 720p video streams at 60 fps, diverse action and text-driven interactions, and agent-driven world exploration.</p>
+            <ul class="paper-links">
+              <li><a href="https://technology.robbyant.com/lingbot-world-v2" target="_blank" rel="noopener noreferrer">Project</a></li>
+              <li><a href="https://arxiv.org/abs/2607.07534" target="_blank" rel="noopener noreferrer">arXiv</a></li>
+              <li><a href="https://github.com/Robbyant/lingbot-world-v2" target="_blank" rel="noopener noreferrer">Code</a></li>
+              <li><a href="https://huggingface.co/robbyant/lingbot-world-v2-14b-causal-fast" target="_blank" rel="noopener noreferrer">Model</a></li>
+              <li><a href="https://modelscope.cn/models/Robbyant/lingbot-world-v2-14b-causal-fast" target="_blank" rel="noopener noreferrer">ModelScope</a></li>
+            </ul>
+          </div>
+        </article>
+        <article class="paper-card">
+          <a
+            class="paper-visual"
+            href="https://nju-3dv.github.io/projects/SpatialVID/"
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Open the A Large-Scale Video Dataset with Spatial Annotations project page"
+          >
+            <img
+              src="assets/spatialvid.png"
+              alt="SpatialVID dataset overview"
+              loading="lazy"
+            >
+            <span class="visual-note">View project ↗</span>
+          </a>
+
+          <div class="paper-content">
+            <h3>
+              <a href="https://nju-3dv.github.io/projects/SpatialVID/" target="_blank" rel="noopener noreferrer">A Large-Scale Video Dataset with Spatial Annotations</a>
+            </h3>
+            <p class="authors"><strong>Jiahao Wang</strong>*, Yufeng Yuan*, Rujie Zheng*, Youtian Lin, Jian Gao, Lin-Zhuo Chen, Yajie Bao, Yi Zhang, Chang Zeng, Yanxi Zhou, Xiaoxiao Long, Hao Zhu, Zhaoxiang Zhang, Xun Cao, Yao Yao†</p>
+            <p class="paper-venue">CVPR, 2026</p>
+            <p class="paper-summary">SpatialVID brings together large-scale video data and rich spatial annotations to support research on spatial understanding and world models.</p>
+            <ul class="paper-links">
+              <li><a href="https://nju-3dv.github.io/projects/SpatialVID/" target="_blank" rel="noopener noreferrer">Project</a></li>
+              <li><a href="https://arxiv.org/abs/2509.09676" target="_blank" rel="noopener noreferrer">arXiv</a></li>
+              <li><a href="https://huggingface.co/SpatialVID" target="_blank" rel="noopener noreferrer">Data</a></li>
+              <li><a href="https://github.com/NJU-3DV/spatialVID" target="_blank" rel="noopener noreferrer">Code</a></li>
+            </ul>
+          </div>
+        </article>
+      </section>
+      <section class="section reveal" id="education" aria-labelledby="education-title">
+        <div class="section-heading">
+          <p class="section-index">03</p>
+          <h2 id="education-title">Education</h2>
+        </div>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="entry-main">
+              <h3>Nanjing University</h3>
+              <p class="entry-role">Combined Master's and Ph.D. Program in Computer Science (2-year master's + 4-year Ph.D.)</p>
+              <p class="entry-detail">School of Intelligent Science and Technology</p>
+              <p class="entry-advisor">Supervisor: <a href="https://yoyo000.github.io/" target="_blank" rel="noopener noreferrer">Prof. Yao Yao</a></p>
+            </div>
+            <time class="entry-period" datetime="2024-09">2024.09 — Present</time>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot" aria-hidden="true"></div>
+            <div class="entry-main">
+              <h3>Xi'an Jiaotong University</h3>
+              <p class="entry-role">B.S. in Artificial Intelligence</p>
+              <p class="entry-detail">Institute of Artificial Intelligence and Robotics</p>
+              <p class="entry-advisor">Qian Xuesen Honors College</p>
+            </div>
+            <time class="entry-period" datetime="2020-09">2020.09 — 2024.06</time>
+          </li>
+        </ol>
+      </section>
+      <section class="section reveal" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <p class="section-index">04</p>
+          <h2 id="experience-title">Research Experience</h2>
+        </div>
+        <div class="experience-list">
+          <article class="experience-card">
+            <div class="experience-mark">
+              <img src="assets/ant-research.png" alt="" loading="lazy">
+            </div>
+            <div class="experience-copy">
+              <div class="experience-head">
+                <div>
+                  <h3>Ant Research</h3>
+                  <p class="entry-role">Research Intern</p>
+                </div>
+                <time class="entry-period" datetime="2025-12">2025.12 — Present</time>
+              </div>
+              <p class="entry-detail">Video world models.</p>
+              <p class="entry-advisor">Research advisor: <a href="https://ken-ouyang.github.io/" target="_blank" rel="noopener noreferrer">Dr. Hao Ouyang</a></p>
+            </div>
+          </article>
+          <article class="experience-card">
+            <div class="experience-mark">
+              <img src="assets/nio.png" alt="" loading="lazy">
+            </div>
+            <div class="experience-copy">
+              <div class="experience-head">
+                <div>
+                  <h3>NIO</h3>
+                  <p class="entry-role">Autonomous Driving Intern · Model Infra Team</p>
+                </div>
+                <time class="entry-period" datetime="2023-11">2023.11 — 2024.08</time>
+              </div>
+              <p class="entry-detail">World models for autonomous driving.</p>
+              <p class="entry-advisor">Research advisors: <a href="https://nmaac.github.io/" target="_blank" rel="noopener noreferrer">Dr. Ningning Ma</a> and Jin Chen</p>
+            </div>
+          </article>
+          <article class="experience-card">
+            <div class="experience-mark">
+              <img src="assets/opendrivelab.png" alt="" loading="lazy">
+            </div>
+            <div class="experience-copy">
+              <div class="experience-head">
+                <div>
+                  <h3>OpenDriveLab</h3>
+                  <p class="entry-role">Autonomous Driving Intern</p>
+                </div>
+                <time class="entry-period" datetime="2023-07">2023.07 — 2023.09</time>
+              </div>
+              <p class="entry-detail">Research on autonomous driving.</p>
+              <p class="entry-advisor">Research advisor: <a href="https://lihongyang.info" target="_blank" rel="noopener noreferrer">Prof. Hongyang Li</a></p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="section reveal" id="awards" aria-labelledby="awards-title">
+        <div class="section-heading">
+          <p class="section-index">05</p>
+          <h2 id="awards-title">Awards &amp; Honors</h2>
+        </div>
+        <h3 class="award-group-title">Contests</h3>
+        <ul class="award-list">
+          <li>
+            <span><strong>First Place</strong>, The Hogwarts House Cup</span>
+            <time datetime="2025">2025</time>
+          </li>
+          <li>
+            <span><strong>National Second Prize</strong>, RoboCup China Open — Intelligent Vehicle Competition</span>
+            <time datetime="2023-11">2023.11</time>
+          </li>
+          <li>
+            <span><strong>National Second Prize</strong>, China Undergraduate Mathematical Contest in Modeling</span>
+            <time datetime="2023-09">2023.09</time>
+          </li>
+          <li>
+            <span><strong>National First Prize</strong>, RoboMaster University Championship</span>
+            <time datetime="2022-07">2022.07</time>
+          </li>
+        </ul>
+        <h3 class="award-group-title">Scholarships</h3>
+        <ul class="award-list">
+          <li>
+            <span><strong>First Prize</strong>, RIGOL Elite Scholarship</span>
+            <time datetime="2025-06">2025.06</time>
+          </li>
+          <li>
+            <span><strong>Special Development Award</strong>, Megvii Scholarship</span>
+            <time datetime="2022-10">2022.10</time>
+          </li>
+        </ul>
+      </section>
+      <footer class="site-footer">
+        <p>Jiahao Wang · Spatial understanding, world models &amp; video generation</p>
+        <a href="mailto:jiah.wang@smail.nju.edu.cn">Get in touch</a>
+      </footer>
+    </main>
+  </body>
+</html>

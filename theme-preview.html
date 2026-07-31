@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Homepage color themes</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        color: #24211d;
+        background: #eeeae3;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      header {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+        padding: 18px clamp(18px, 4vw, 52px);
+        border-bottom: 1px solid rgba(36, 33, 29, 0.12);
+        background: rgba(250, 248, 243, 0.94);
+        backdrop-filter: blur(12px);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Georgia, serif;
+        font-size: clamp(24px, 3vw, 34px);
+        font-weight: 500;
+      }
+
+      header p {
+        margin: 5px 0 0;
+        color: #746f68;
+        font-size: 13px;
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+        padding: 24px;
+      }
+
+      article {
+        overflow: hidden;
+        border: 1px solid rgba(36, 33, 29, 0.13);
+        border-radius: 15px;
+        background: #fff;
+        box-shadow: 0 10px 32px rgba(36, 33, 29, 0.08);
+      }
+
+      .card-head {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 13px 15px;
+        border-bottom: 1px solid rgba(36, 33, 29, 0.1);
+      }
+
+      .theme-name {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .swatches {
+        display: flex;
+      }
+
+      .swatches span {
+        width: 18px;
+        height: 18px;
+        margin-left: -4px;
+        border: 2px solid #fff;
+        border-radius: 50%;
+        box-shadow: 0 0 0 1px rgba(36, 33, 29, 0.08);
+      }
+
+      .swatches span:first-child {
+        margin-left: 0;
+      }
+
+      .terracotta .swatches span:nth-child(1) { background: #faf8f3; }
+      .terracotta .swatches span:nth-child(2) { background: #a94f35; }
+      .terracotta .swatches span:nth-child(3) { background: #8a5f1f; }
+      .ink .swatches span:nth-child(1) { background: #f5f7f8; }
+      .ink .swatches span:nth-child(2) { background: #315f7d; }
+      .ink .swatches span:nth-child(3) { background: #855d37; }
+      .sage .swatches span:nth-child(1) { background: #f5f7f2; }
+      .sage .swatches span:nth-child(2) { background: #3f6b57; }
+      .sage .swatches span:nth-child(3) { background: #9d5535; }
+      .plum .swatches span:nth-child(1) { background: #faf6f7; }
+      .plum .swatches span:nth-child(2) { background: #7a4058; }
+      .plum .swatches span:nth-child(3) { background: #9d513d; }
+
+      h2 {
+        margin: 0;
+        font-size: 14px;
+      }
+
+      .card-head a {
+        color: #5e554e;
+        font-size: 12px;
+        font-weight: 650;
+        text-decoration: none;
+      }
+
+      .card-head a:hover {
+        text-decoration: underline;
+      }
+
+      iframe {
+        display: block;
+        width: 100%;
+        height: 610px;
+        border: 0;
+        background: #fff;
+      }
+
+      @media (max-width: 920px) {
+        main {
+          grid-template-columns: 1fr;
+          padding: 16px;
+        }
+
+        iframe {
+          height: 680px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Homepage color themes</h1>
+      <p>四版使用完全相同的内容和排版，仅比较颜色。点击“完整查看”可打开整页。</p>
+    </header>
+
+    <main>
+      <article class="terracotta">
+        <div class="card-head">
+          <div class="theme-name">
+            <div class="swatches" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h2>Terracotta · 暖陶土</h2>
+          </div>
+          <a href="preview-terracotta.html">完整查看 ↗</a>
+        </div>
+        <iframe src="preview-terracotta.html" title="Terracotta homepage preview"></iframe>
+      </article>
+
+      <article class="ink">
+        <div class="card-head">
+          <div class="theme-name">
+            <div class="swatches" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h2>Ink · 墨蓝</h2>
+          </div>
+          <a href="preview-ink.html">完整查看 ↗</a>
+        </div>
+        <iframe src="preview-ink.html" title="Ink homepage preview"></iframe>
+      </article>
+
+      <article class="sage">
+        <div class="card-head">
+          <div class="theme-name">
+            <div class="swatches" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h2>Sage · 鼠尾草绿</h2>
+          </div>
+          <a href="preview-sage.html">完整查看 ↗</a>
+        </div>
+        <iframe src="preview-sage.html" title="Sage homepage preview"></iframe>
+      </article>
+
+      <article class="plum">
+        <div class="card-head">
+          <div class="theme-name">
+            <div class="swatches" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <h2>Plum · 深梅紫</h2>
+          </div>
+          <a href="preview-plum.html">完整查看 ↗</a>
+        </div>
+        <iframe src="preview-plum.html" title="Plum homepage preview"></iframe>
+      </article>
+    </main>
+  </body>
+</html>

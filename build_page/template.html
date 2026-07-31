@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="{{THEME}}" data-color-preference="auto" data-color-mode="light">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{DESCRIPTION}}">
+    <meta name="author" content="{{NAME}}">
+    <meta name="theme-color" content="{{THEME_COLOR}}">
+    <title>{{NAME}}</title>
+
+    <script>
+      (function () {
+        var preference = "auto";
+        try {
+          var storedPreference = localStorage.getItem("homepage-color-mode");
+          if (["light", "dark", "auto"].includes(storedPreference)) {
+            preference = storedPreference;
+          }
+        } catch (error) {
+          // Local storage can be unavailable in privacy-restricted contexts.
+        }
+        var prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.colorPreference = preference;
+        document.documentElement.dataset.colorMode =
+          preference === "auto" ? (prefersDark ? "dark" : "light") : preference;
+      })();
+    </script>
+
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&amp;family=Lato:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+    >
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script type="module" src="typography.js"></script>
+  </head>
+
+  <body>
+    <nav class="topnav" aria-label="Primary navigation">
+      <div class="topnav-inner">
+        <a class="brand" href="#top">{{NAME}}</a>
+
+        <div class="nav-actions">
+          <ul class="nav-links" id="nav-links">
+{{NAV_ITEMS}}
+          </ul>
+
+          <div class="color-mode-switch" role="group" aria-label="Color mode">
+            <button class="color-mode-button" type="button" data-color-choice="light" aria-label="White mode" title="White">
+              <i class="fa-regular fa-sun" aria-hidden="true"></i>
+              <span class="sr-only">White</span>
+            </button>
+            <button class="color-mode-button" type="button" data-color-choice="dark" aria-label="Black mode" title="Black">
+              <i class="fa-regular fa-moon" aria-hidden="true"></i>
+              <span class="sr-only">Black</span>
+            </button>
+            <button class="color-mode-button" type="button" data-color-choice="auto" aria-label="Follow system color mode" title="Auto">
+              <i class="fa-solid fa-circle-half-stroke" aria-hidden="true"></i>
+              <span class="sr-only">Auto</span>
+            </button>
+          </div>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="nav-links"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <div class="progress-bar" id="progress" aria-hidden="true"></div>
+    </nav>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <main class="container" id="top">
+{{HERO}}
+{{SECTIONS}}
+      <footer class="site-footer">
+        <p>{{FOOTER}}</p>
+{{FOOTER_LINK}}
+      </footer>
+    </main>
+  </body>
+</html>
