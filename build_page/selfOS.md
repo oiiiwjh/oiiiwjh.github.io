@@ -50,9 +50,9 @@ My research interests include **spatial understanding**, **world models**, and *
 - **Image:** assets/lingbot-world-v2.png
 - **Image alt:** LingBot-World-Infinity teaser featuring diverse interactive worlds
 - **Project:** https://technology.robbyant.com/lingbot-world-v2
-- **Authors:** Zelin Gao, Qiuyu Wang, Jiapeng Zhu, Jingye Chen, Zichen Liu, Qingyan Bai, **Jiahao Wang**, Yufeng Yuan, Hanlin Wang, Yichong Lu, Ka Leong Cheng, Haojie Zhang, Jian Gao, Tianrui Feng, Yuzheng Liu, Yao Yao, Yinghao Xu, Xing Zhu, Yujun Shen, Hao Ouyang
-- **Summary:** LingBot-World 2.0 (LingBot-World-Infinity) supports an unbounded interaction horizon, real-time 720p video streams at 60 fps, diverse action and text-driven interactions, and agent-driven world exploration.
-- **Links:** [Project](https://technology.robbyant.com/lingbot-world-v2) · [arXiv](https://arxiv.org/abs/2607.07534) · [Code](https://github.com/Robbyant/lingbot-world-v2) · [Model](https://huggingface.co/robbyant/lingbot-world-v2-14b-causal-fast) · [ModelScope](https://modelscope.cn/models/Robbyant/lingbot-world-v2-14b-causal-fast)
+- **Authors:** Core Contributor
+- **Summary:** LingBot-World 2.0 (LingBot-World-Infinity) supports an unbounded interaction horizon, real-time 720p video streams at 60 fps, diverse action and text-driven interactions, and agent-level long-horizon planning.
+- **Links:** [Project](https://technology.robbyant.com/lingbot-world-v2) · [arXiv](https://arxiv.org/abs/2607.07534) · [Code](https://github.com/Robbyant/lingbot-world-v2) · [Model](https://huggingface.co/lingbot-world-v2)
 
 ### A Large-Scale Video Dataset with Spatial Annotations
 
@@ -60,9 +60,9 @@ My research interests include **spatial understanding**, **world models**, and *
 - **Image:** assets/spatialvid.png
 - **Image alt:** SpatialVID dataset overview
 - **Project:** https://nju-3dv.github.io/projects/SpatialVID/
-- **Authors:** **Jiahao Wang**\*, Yufeng Yuan\*, Rujie Zheng\*, Youtian Lin, Jian Gao, Lin-Zhuo Chen, Yajie Bao, Yi Zhang, Chang Zeng, Yanxi Zhou, Xiaoxiao Long, Hao Zhu, Zhaoxiang Zhang, Xun Cao, Yao Yao†
+- **Authors:** **Jiahao Wang**\*, Yufeng Yuan\*, Rujie Zheng\*, Youtian Lin, Jian Gao, Lin-Zhuo Chen, Yajie Bao, Yi Zhang, Chang Zeng, Yanxi Zhou, Xiaoxiao Long, Hao Zhu, Zhaoxiang Zhang, Xun Cao, Yichen Yan, Weicai Ye, Minglie Hu, Fei Hou, Mingyang Long, Jingyi Xu, Song-Hai Zhang, Ying Shan, Yu Qiao, and Yifan Wang
 - **Summary:** SpatialVID brings together large-scale video data and rich spatial annotations to support research on spatial understanding and world models.
-- **Links:** [Project](https://nju-3dv.github.io/projects/SpatialVID/) · [arXiv](https://arxiv.org/abs/2509.09676) · [Data](https://huggingface.co/SpatialVID) · [Code](https://github.com/NJU-3DV/spatialVID)
+- **Links:** [Project](https://nju-3dv.github.io/projects/SpatialVID/) · [arXiv](https://arxiv.org/abs/2509.09676) · [Data](https://huggingface.co/SpatialVID) · [Code](https://github.com/NJU-3DVis/SpatialVID)
 
 ## Education
 
